@@ -48,7 +48,7 @@ pip install tensorlayer==1.11;
 ```
 
 
-2. Convert your image using script runSRpconversion.sh
+2. Convert your image to numpy format (not pickle)  using script runSRpconversion.sh
 ```
 source ~/anaconda/etc/profile.d/conda.sh;
 conda activate srRockEnv;
