@@ -11,11 +11,7 @@ Implementation for the Super resolution of both 2D and 3D images. Involved Neura
 
 ## Authors
 [YingDa Wang](https://github.com/yingDaWang-UNSW "GitHub Account")<br>
-[Name](social media account link "hover information")<br>
-[Name](social media account link "hover information")<br>
-[Name](social media account link "hover information")<br>
-
-with small modification by Usatyuk Vasiliy for Train DNN.
+with small modification by USA_VS for Train DNN.
 
 
 Preparation of Env for Train
