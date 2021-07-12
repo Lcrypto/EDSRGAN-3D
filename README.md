@@ -15,9 +15,9 @@ with several small modification by USA_VS for END-to-END Train and Inference SRD
 Please put a star to https://github.com/yingDaWang-UNSW to support his work.
 
 
-Preparation of Env for Train
+Preparation of Env for SRDNN Train.
 
-DNN  use old Tensorflow 1.12 with Tensorlayer 1.11 (deleted at 2017.03.02).
+Let use Env, because SRDNN use old Tensorflow 1.12 with Tensorlayer 1.11 (deleted at 2017.03.02).
 
 Let consider Mac OS X, another platforms require similar dependency.
 
