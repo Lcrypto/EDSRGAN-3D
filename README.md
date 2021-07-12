@@ -2,7 +2,7 @@
 
 
 ## Introduction
-Rewrited fork of Projects  https://github.com/yingDaWang-UNSW/GUI_Prototype_SR and https://github.com/yingDaWang-UNSW/EDSRGAN-3D  for doing end-to-end Train and Inference Super resolution of both 2D and 3D images using CNN Resnet, GANs: EDSR, , SRGAN, WDSR, SRCNN. 
+Rewrited fork of Projects  https://github.com/yingDaWang-UNSW/GUI_Prototype_SR and https://github.com/yingDaWang-UNSW/EDSRGAN-3D  for doing end-to-end Train and Inference Super resolution of both 2D and 3D images using SRCNN Resnet, GANs: ESRGAN, SRGAN. 
 For detail read Wang Ying Da PH.D THESIS  Machine Learning Methods and Computationally Efficient Techniques in Digital Rock Analysis, 2020 and all related articles.
 
 
