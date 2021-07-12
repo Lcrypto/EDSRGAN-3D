@@ -20,6 +20,8 @@ DNN  use old Tensorflow 1.12 with Tensorlayer 1.11 (deleted at 2017.03.02).
 
 Let consider Mac OS X, another platforms require similar dependency.
 
+Root folder of project './GAN_PhysRock&Roll/' 
+
 1. run sh script  installSRMac.sh
 
 installSRMac.sh 
