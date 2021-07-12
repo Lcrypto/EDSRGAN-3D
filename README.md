@@ -1,147 +1,115 @@
-# Super Resolution by Neural Networks
+#  Super Resolution by Deep Neural Networks (ResNet and Gans: EDSR, SRGAN, WDSR, SRCNN) for 2D/3D Photo and 2D/3D Rock Physics images
+
+
 ## Introduction
-Implementation for the super resolution of both 2D and 3D images. Involved Neural Networks: EDSR, SR-Resnet Residual, SRGAN, WDSR, SRCNN.
+Rewrited fork of Projects  https://github.com/yingDaWang-UNSW/GUI_Prototype_SR and yingDaWang-UNSW/EDSRGAN-3D  for doing end-to-end Train and Inference, 
+For detail read Wang Ying Da PH.D THESIS  Machine Learning Methods and Computationally Efficient Techniques in Digital Rock Analysis, 2020
+
+Implementation for the Super resolution of both 2D and 3D images. Involved Neural Networks: EDSR, SR-Resnet Residual, SRGAN, WDSR, SRCNN.
+
+
 
 ## Authors
 [YingDa Wang](https://github.com/yingDaWang-UNSW "GitHub Account")<br>
 [Name](social media account link "hover information")<br>
 [Name](social media account link "hover information")<br>
 [Name](social media account link "hover information")<br>
-...
 
-(Department, UNSW)
-
-## Installation
-**Version 0.1**<br>
-This software is compatible with windows, mac, and linux  machines. It will install anaconda3, along with the necessary python packages in a containerised anaconda environment. <br>
-
-**Linux and Mac**
-
-Open a terminal window at the directory where the file “installSR.sh” is located and type “bash installSR.sh”. 
+with small modification by Usatyuk Vasiliy for Train
 
 
+Preparation of Env for Train
 
-Step1: 
+Train use old Tensorflow with Tensorlayer 1.11 deleted at 2017.03.02 
 
-Open a “Anaconda cmd Prompt” terminal window at the directory where the file “installSR.sh” is located and  type “bash installSR.sh”. 
-```
-$ bash installSR.sh
-```
+Consider Mac OS X, another platforms require similar dependency.
 
-![image](https://github.com/LiLeaf/SRInstall_images/blob/master/step1.png)
+1. run sh script  installSRMac.sh
+
+installSRMac.sh 
 
 
-Step2: 
+curl -O https://repo.anaconda.com/archive/Anaconda3-2019.03-MacOSX-x86_64.sh;
+bash Anaconda3-2019.03-MacOSX-x86_64.sh -b;
 
-Please input this command: 
+~/anaconda/bin/conda init bash;
+source ~/.bash_profile; # just in case;
 
-For Mac, please use
+conda create --name srRockEnv;
 
-```
-$ bash installSRMac.sh
-```
+source ~/anaconda/etc/profile.d/conda.sh;
+conda activate srRockEnv;
+conda info --envs;
 
-For Linux, please use
 
-```
-$ bash installSRLinux.sh
-```
+conda install tensorflow=1.12; 
+conda install pillow;
+conda install -c conda-forge gooey;
+pip install tensorlayer==1.11;
 
-![image](https://github.com/LiLeaf/SRInstall_images/blob/master/step2.png)
 
-Step3: 
+2. Convert your image using script runSRpconversion.sh
 
-Always type “y” for yes if it is required. 
+source ~/anaconda/etc/profile.d/conda.sh;
+conda activate srRockEnv;
+#we consider case when all project saved in  '/GAN_PhysRock&Roll/' folder
+#first convert image files to numpy array,
+#High Resolution Images for train stored in 'DRSRD3/DRSRD3_3D/shuffled3D/GAN_train_HR'
+# With names 0001-9999
+#Low Resolution Images stored in 'DRSRD3/DRSRD3_3D/shuffled3D/GAN_train_unknown_X4'
+#'unknown' in folder name because we not defined Upsampling method argument --downgrade  by default='unknown'
+#High Resolution Images for valid stored in 'DRSRD3/DRSRD3_3D/shuffled3D/GAN_valid_HR'
+#Low Resolution Images for valid stored in 'DRSRD3/DRSRD3_3D/shuffled3D/GAN_valid_unknown_X4'
 
-![image](https://github.com/LiLeaf/SRInstall_images/blob/master/step3.png)
 
-![image](https://github.com/LiLeaf/SRInstall_images/blob/master/step4.png)
 
-![image](https://github.com/LiLeaf/SRInstall_images/blob/master/step5.png)
+3.Train using your images. Below train on toy example, 9 image for train and 1 to validation from Div2k set
 
-![image](https://github.com/LiLeaf/SRInstall_images/blob/master/step6.png)
 
-![image](https://github.com/LiLeaf/SRInstall_images/blob/master/step7.png)
+# train and validation ids respesented by arguments --trainIDs 1-9 --valIDs 10-10
 
-![image](https://github.com/LiLeaf/SRInstall_images/blob/master/step8.png)
+pythonw sr3dydw.py --preprocess True  --trainIDs 1-9 --valIDs 10-10 --dataset '../GAN_PhysRock&Roll/Shuffled3D_BIN' --outdir '../GAN_PhysRock&Roll/shuffled3D_BIN'  --indir '../GAN_PhysRock&Roll/DRSRD3/DRSRD3_3D/shuffled3D';
+#for example 0001x4.png,0002x4.png, ..., 0010x4.png file of 4 times downsampled images of size 510x339
+#for example 0001.png,0002.png, ..., 0010.png file of original high resolution images of size 2040x1356
 
-Step4: 
+#Train setting DIV2K images USIGN 2D (valH * valW) SUPER RESOLUTION
+pythonw sr3dydw.py --train True --batch-size 4 --depth 1 --iterMax 100 --valW 1356  --valH 2040  --trainIDs 1-8 --valIDs 9-10;
 
-Please input this command to run the software: 
+#FOR TRAIN 3D  (valH * valW * depth)
+pythonw sr3dydw.py --train True --batch-size 4 --valW Y --valH X  --depth Z --trainIDs '1-8' --valIDs '8-10' ;
 
-For Mac, please use
-```
-$ bash runSRMac.sh
-```
 
-![image](https://github.com/LiLeaf/SRInstall_images/blob/master/step9.png)
 
-For Linux, please use
-```
-$ bash runSRLinux.sh
-```
 
-<br>FOR ADVANCED USERS: if you already have anaconda3, or wish to install the packages yourself, a full list of conda packages used by this software are shown below:<br>
+#after training  network weight stored in 3 files
+# Example
+ epoch-250-PSNR-26.706900875139965.ckpt.meta
+ epoch-250-PSNR-26.706900875139965.ckpt.index
+ epoch-250-PSNR-26.706900875139965.ckpt.data-00000-of-00001
 
-```
-conda install tensorflow=1.13.0 
 
-conda install matplotlib 
+# just copy trained weigh files to '/validatedCheckpoints' folder
+# replace in  sr3dydwTestOnly.py line with model restore  (170 to 200)
+# for example ResNet architecture (not GAN setting)
+#   if dim == '2D Photo':
+#        flatFlag = True
+#        if ganFlag:
+#            restore = './validatedCheckpoints/SRGAN2DRock.ckpt'
+#        else:
+#            restore = './validatedCheckpoints/epoch-250-PSNR-26.706900875139965.ckpt'
+# Toy trained model using 9 images and validation using 1 image from div2K dataset
+# and run runSRInference.sh
 
-conda install pillow 
 
-conda install -c conda-forge gooey  
 
-pip install tensorlayer==1.11 
 
-pip install argparse 
-```
+4. Use inference Gui application
 
-**Windows**
 
-For Windows system, we reccomand you to install via the conda promt.
 
-<br> If you do not have the anaconda3, you may download it via this link:<br>
-https://repo.anaconda.com/archive/Anaconda3-2019.03-Windows-x86_64.exe
 
-For Linux system, click this link:
-https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh
 
-Then, please open a “Anaconda Prompt” terminal window shown in the below image.  
-
-![image](https://github.com/LiLeaf/SRInstall_images/blob/master/step11.png)
-
-The specific installation steps are as follow. Always type "y" for "yes".
-```
-conda update -n base -c defaults conda
-
-conda create --name srRockEnv2 python=3.6
-
-conda activate srRockEnv2
-```
-
-For linux system, you may prefer to type "conda install tensorflow-gpu=1.13.0":
-```
-conda install tensorflow-gpu=1.13.0
-```
-
-For Mac system, "conda install tensorflow=1.13.0" instead:
-```
-conda install tensorflow=1.13.0
-```
-
-Then, please type these lines:
-```
-conda install matplotlib
-
-conda install pillow
-
-conda install -c conda-forge gooey
-
-pip install tensorlayer==1.11
-
-pip install argparse
-```
+Inference 
 
 ##Running Guideline##
 
