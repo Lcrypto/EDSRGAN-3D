@@ -16,9 +16,9 @@ with small modification by USA_VS for Train DNN.
 
 Preparation of Env for Train
 
-Train use old Tensorflow with Tensorlayer 1.11 deleted at 2017.03.02 
+DNN  use old Tensorflow 1.12 with Tensorlayer 1.11 (deleted at 2017.03.02).
 
-Consider Mac OS X, another platforms require similar dependency.
+Let consider Mac OS X, another platforms require similar dependency.
 
 1. run sh script  installSRMac.sh
 
@@ -44,6 +44,7 @@ conda install -c conda-forge gooey;
 pip install tensorlayer==1.11;
 
 
+
 2. Convert your image using script runSRpconversion.sh
 
 source ~/anaconda/etc/profile.d/conda.sh;
@@ -56,17 +57,19 @@ Low Resolution Images stored in 'DRSRD3/DRSRD3_3D/shuffled3D/GAN_train_unknown_X
 'unknown' in folder name because we not defined Upsampling method argument --downgrade  by default='unknown'
 High Resolution Images for valid stored in 'DRSRD3/DRSRD3_3D/shuffled3D/GAN_valid_HR'
 Low Resolution Images for valid stored in 'DRSRD3/DRSRD3_3D/shuffled3D/GAN_valid_unknown_X4'
+train and validation ids respesented by arguments --trainIDs 1-9 --valIDs 10-10
 
+pythonw sr3dydw.py --preprocess True  --trainIDs 1-9 --valIDs 10-10 --dataset '../GAN_PhysRock&Roll/Shuffled3D_BIN' --outdir '../GAN_PhysRock&Roll/shuffled3D_BIN'  --indir '../GAN_PhysRock&Roll/DRSRD3/DRSRD3_3D/shuffled3D';
+
+
+for example 0001x4.png,0002x4.png, ..., 0010x4.png file of 4 times downsampled images of size 510x339
+for example 0001.png,0002.png, ..., 0010.png file of original high resolution images of size 2040x1356
 
 
 3.Train using your images. Below train on toy example, 9 image for train and 1 to validation from Div2k set
 
 
- train and validation ids respesented by arguments --trainIDs 1-9 --valIDs 10-10
 
-pythonw sr3dydw.py --preprocess True  --trainIDs 1-9 --valIDs 10-10 --dataset '../GAN_PhysRock&Roll/Shuffled3D_BIN' --outdir '../GAN_PhysRock&Roll/shuffled3D_BIN'  --indir '../GAN_PhysRock&Roll/DRSRD3/DRSRD3_3D/shuffled3D';
-for example 0001x4.png,0002x4.png, ..., 0010x4.png file of 4 times downsampled images of size 510x339
-for example 0001.png,0002.png, ..., 0010.png file of original high resolution images of size 2040x1356
 
 Train setting DIV2K images USIGN 2D (valH * valW) SUPER RESOLUTION
 pythonw sr3dydw.py --train True --batch-size 4 --depth 1 --iterMax 100 --valW 1356  --valH 2040  --trainIDs 1-8 --valIDs 9-10;
