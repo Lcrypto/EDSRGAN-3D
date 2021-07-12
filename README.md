@@ -52,14 +52,14 @@ pip install tensorlayer==1.11;
 
 source ~/anaconda/etc/profile.d/conda.sh;
 conda activate srRockEnv;
-#we consider case when all project saved in  '/GAN_PhysRock&Roll/' folder
-#first convert image files to numpy array,
-#High Resolution Images for train stored in 'DRSRD3/DRSRD3_3D/shuffled3D/GAN_train_HR'
-# With names 0001-9999
-#Low Resolution Images stored in 'DRSRD3/DRSRD3_3D/shuffled3D/GAN_train_unknown_X4'
-#'unknown' in folder name because we not defined Upsampling method argument --downgrade  by default='unknown'
-#High Resolution Images for valid stored in 'DRSRD3/DRSRD3_3D/shuffled3D/GAN_valid_HR'
-#Low Resolution Images for valid stored in 'DRSRD3/DRSRD3_3D/shuffled3D/GAN_valid_unknown_X4'
+we consider case when all project saved in  '/GAN_PhysRock&Roll/' folder
+first convert image files to numpy array,
+High Resolution Images for train stored in 'DRSRD3/DRSRD3_3D/shuffled3D/GAN_train_HR'
+ With names 0001-9999
+Low Resolution Images stored in 'DRSRD3/DRSRD3_3D/shuffled3D/GAN_train_unknown_X4'
+'unknown' in folder name because we not defined Upsampling method argument --downgrade  by default='unknown'
+High Resolution Images for valid stored in 'DRSRD3/DRSRD3_3D/shuffled3D/GAN_valid_HR'
+Low Resolution Images for valid stored in 'DRSRD3/DRSRD3_3D/shuffled3D/GAN_valid_unknown_X4'
 
 
 
