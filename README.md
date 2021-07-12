@@ -81,15 +81,14 @@ pythonw sr3dydw.py --train True --batch-size 4 --valW Y --valH X  --depth Z --tr
 
 
 
-After training  network weight stored in 3 files
-
- epoch-250-PSNR-26.706900875139965.ckpt.meta
- epoch-250-PSNR-26.706900875139965.ckpt.index
- epoch-250-PSNR-26.706900875139965.ckpt.data-00000-of-00001
+After training  network weight stored in 3 files:
+epoch-250-PSNR-26.706900875139965.ckpt.meta, epoch-250-PSNR-26.706900875139965.ckpt.index, epoch-250-PSNR-26.706900875139965.ckpt.data-00000-of-00001.
 
 
 
 Copy trained weigh files to '/validatedCheckpoints' folder,
+
+
 replace in  sr3dydwTestOnly.py line with model restore  (170 to 200)
 
 'for example ResNet architecture (not GAN setting)
