@@ -2,7 +2,7 @@
 
 
 ## Introduction
-Rewrited fork of Projects  https://github.com/yingDaWang-UNSW/GUI_Prototype_SR and yingDaWang-UNSW/EDSRGAN-3D  for doing end-to-end Train and Inference. 
+Rewrited fork of Projects  https://github.com/yingDaWang-UNSW/GUI_Prototype_SR and https://github.com/yingDaWang-UNSW/EDSRGAN-3D  for doing end-to-end Train and Inference. 
 For detail read Wang Ying Da PH.D THESIS  Machine Learning Methods and Computationally Efficient Techniques in Digital Rock Analysis, 2020
 
 Implementation for the Super resolution of both 2D and 3D images. Involved Neural Networks: EDSR, SR-Resnet Residual, SRGAN, WDSR, SRCNN.
