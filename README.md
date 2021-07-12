@@ -46,7 +46,7 @@ pip install tensorlayer==1.11;
 
 
 2. Convert your image using script runSRpconversion.sh
-
+```
 source ~/anaconda/etc/profile.d/conda.sh;
 conda activate srRockEnv;
 we consider case when all project saved in  '/GAN_PhysRock&Roll/' folder
@@ -58,7 +58,7 @@ Low Resolution Images stored in 'DRSRD3/DRSRD3_3D/shuffled3D/GAN_train_unknown_X
 High Resolution Images for valid stored in 'DRSRD3/DRSRD3_3D/shuffled3D/GAN_valid_HR'
 Low Resolution Images for valid stored in 'DRSRD3/DRSRD3_3D/shuffled3D/GAN_valid_unknown_X4'
 train and validation ids respesented by arguments --trainIDs 1-9 --valIDs 10-10
-```
+
 pythonw sr3dydw.py --preprocess True  --trainIDs 1-9 --valIDs 10-10 --dataset '../GAN_PhysRock&Roll/Shuffled3D_BIN' --outdir '../GAN_PhysRock&Roll/shuffled3D_BIN'  --indir '../GAN_PhysRock&Roll/DRSRD3/DRSRD3_3D/shuffled3D';
 ```
 
