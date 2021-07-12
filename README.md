@@ -1,4 +1,4 @@
-# Train and Inference Super Resolution by Deep Neural Networks (SRCNN ResNet and Gans: EDSR, SRGAN, WDSR ) for 2D/3D Photo and 2D/3D Rock Physics images
+# Train and Inference Super Resolution for 2D/3D Photo and 2D/3D Rock Physics images by Deep Neural Networks. SRCNN Resnet, SRGANs: ESRGAN, SRGAN, WDSRGAN
 
 
 ## Introduction
