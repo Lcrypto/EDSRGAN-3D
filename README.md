@@ -15,7 +15,7 @@ Implementation for the Super resolution of both 2D and 3D images. Involved Neura
 [Name](social media account link "hover information")<br>
 [Name](social media account link "hover information")<br>
 
-with small modification by Usatyuk Vasiliy for Train
+with small modification by Usatyuk Vasiliy for Train DNN.
 
 
 Preparation of Env for Train
