@@ -75,11 +75,11 @@ For example 0001x4.png,0002x4.png, ..., 0010x4.png file of 4 times downsampled i
 
 Train setting DIV2K images USIGN 2D (valH * valW) SUPER RESOLUTION
 ```
-pythonw sr3dydw.py --train True --batch-size 4 --depth 1 --iterMax 100 --valW 1356  --valH 2040  --trainIDs 1-8 --valIDs 9-10;
+pythonw sr3dydw.py --train True --batch-size 4 --depth 1 --iterMax 100 --valW 1356  --valH 2040  --trainIDs 1-9 --valIDs 10-10;
 ```
 FOR TRAIN 3D  (valH * valW * depth)
 ```
-pythonw sr3dydw.py --train True --batch-size 4 --valW Y --valH X  --depth Z --trainIDs '1-8' --valIDs '8-10' ;
+pythonw sr3dydw.py --train True --batch-size 4 --valW Y --valH X  --depth Z --trainIDs 1-9 --valIDs 10-10 ;
 ```
 
 
