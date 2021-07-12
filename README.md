@@ -12,7 +12,7 @@ For detail read Wang Ying Da PH.D THESIS  Machine Learning Methods and Computati
 ## Authors
 [YingDa Wang](https://github.com/yingDaWang-UNSW "GitHub Account")<br>
 with several small modification by USA_VS for END-to-END Train and Inference SRDNN.
-Please put a star to https://github.com/yingDaWang-UNSW for his work.
+Please put a star to https://github.com/yingDaWang-UNSW to support his work.
 
 
 Preparation of Env for Train
