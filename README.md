@@ -64,8 +64,7 @@ train and validation ids respesented by arguments --trainIDs 1-9 --valIDs 10-10
 pythonw sr3dydw.py --preprocess True  --trainIDs 1-9 --valIDs 10-10 --dataset '../GAN_PhysRock&Roll/Shuffled3D_BIN' --outdir '../GAN_PhysRock&Roll/shuffled3D_BIN'  --indir '../GAN_PhysRock&Roll/DRSRD3/DRSRD3_3D/shuffled3D';
 ```
 
-for example 0001x4.png,0002x4.png, ..., 0010x4.png file of 4 times downsampled images of size 510x339
-for example 0001.png,0002.png, ..., 0010.png file of original high resolution images of size 2040x1356
+For example 0001x4.png,0002x4.png, ..., 0010x4.png file of 4 times downsampled images of size 510x339 and 0001.png,0002.png, ..., 0010.png file of original high resolution images of size 2040x1356.
 
 
 3.Train using your images. Below train on toy example, 9 image for train and 1 to validation from Div2k set
