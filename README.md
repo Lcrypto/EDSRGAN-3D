@@ -102,7 +102,7 @@ replace in  sr3dydwTestOnly.py line with model restore  (170 to 200)
         else:
             restore = './validatedCheckpoints/epoch-250-PSNR-26.706900875139965.ckpt'
 ```         
- Toy trained model using 9 images and validation using 1 image from div2K dataset, but you can use you images or full DIV2K full dataset. Run download_2k_dataset.sh to download DIV2K images and place in folders for conversion. 
+ Toy trained model using 9 images and validation using 1 image from div2K dataset, but you can use your images or full DIV2K full dataset. Run download_2k_dataset.sh to download DIV2K images and place in folders for conversion. 
 
 
 
