@@ -70,7 +70,7 @@ For example 0001x4.png,0002x4.png, ..., 0010x4.png file of 4 times downsampled i
 
 3.Train using your images. Below train on toy example, 9 image for train and 1 to validation from Div2k set
 
-
+ ![alt text](https://github.com/Lcrypto/EDSRGAN-3D/blob/master/EDSRGAN-3D.png)
 
 
 Train setting DIV2K images USIGN 2D (valH * valW) SUPER RESOLUTION
